@@ -1,1 +1,26 @@
-<p>home works!</p>
+<div class="home-container">
+  <h2>📚 Book Library</h2>
+
+  <!-- search bar -->
+  <form (ngSubmit)="searchBook()" class="search-form">
+    <input
+      type="text"
+      [(ngModel)]="query"
+      name="query"
+      placeholder="Search books by title or author" />
+    <button type="submit">Search</button>
+  </form>
+
+  <!-- Loading state -->
+  <div *ngIf="loading" class="loading">Loading books...</div>
+
+  <!-- Error -->
+  <div *ngIf="error" class="error">{{error}}</div>
+
+  <!-- Book results -->
+  <div class="results">
+    <app-book-card
+      *ngFor="let book of books" [book]="book">
+    </app-book-card>
+  </div>
+</div>

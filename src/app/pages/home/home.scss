@@ -1,0 +1,49 @@
+.home-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  .search-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: #4a90e2;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  }
+
+  .loading {
+    margin: 15px 0;
+    color: #555;
+  }
+
+  .error {
+    margin: 15px 0;
+    color: red;
+  }
+
+  .results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+  }
+}
