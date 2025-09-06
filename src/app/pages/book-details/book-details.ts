@@ -45,6 +45,6 @@ export class BookDetails {
       return `https://covers.openlibrary.org/b/id/${this.book.covers[0]}-L.jpg`;
     }
 
-    return 'https://via.placeholder.com/200x300?text=No+Cover';
+    return 'assets/images/no-cover.png';
   }
 }

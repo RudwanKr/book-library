@@ -16,6 +16,6 @@ export class BookCard {
     }
 
     // fallback image if no cover
-    return 'https://via.placeholder.com/150x220?text=No+Cover';
+    return 'assets/images/no-cover.png';
   }
 }
