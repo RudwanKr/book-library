@@ -46,4 +46,15 @@
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     gap: 15px;
   }
+
+  .filter {
+    margin: 20px;
+
+    input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+  }
 }

@@ -11,6 +11,11 @@
     <button type="submit">Search</button>
   </form>
 
+  <div class="filter">
+    <input type="text" [(ngModel)]="filter" name="filter"
+      placeholder="Filter by subject...">
+  </div>
+
   <!-- Loading state -->
   <div *ngIf="loading" class="loading">Loading books...</div>
 
@@ -20,7 +25,7 @@
   <!-- Book results -->
   <div class="results">
     <app-book-card
-      *ngFor="let book of books" [book]="book">
+      *ngFor="let book of filteredBooks" [book]="book">
     </app-book-card>
   </div>
 </div>

@@ -12,8 +12,27 @@ export class Home {
   books: any[] = [];
   loading: boolean = false;
   error: string = '';
+  filter: string = '';
 
   constructor(private bookService: Book) {}
+
+  ngOnInit(): void {
+    this.loadDefaultBooks();
+  }
+
+  loadDefaultBooks() {
+    this.loading = true;
+    this.bookService.searchBook('bestseller').subscribe({
+      next: (res) => {
+        this.books = res.docs;
+        this.loading = false;
+      },
+      error: ()=> {
+        this.error = 'Failed to load books.';
+        this.loading = false;
+      }
+    })
+  }
 
   searchBook() {
     if(!this.query.trim()) {
@@ -38,6 +57,14 @@ export class Home {
         this.loading = false;
         this.error = 'Something went wrong while fetching books.'
       }
+    })
+  }
+
+  get filteredBooks() {
+    if (!this.filter.trim()) return this.books;
+
+    return this.books.filter(book => {
+      book.subject?.some((s: string) => s.toLowerCase().includes(this.filter.toLowerCase()))
     })
   }
 }
