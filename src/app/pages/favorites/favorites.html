@@ -1,1 +1,14 @@
-<p>favorites works!</p>
+<div class="favorites-container">
+  <h2>❤️ My Favorite Books</h2>
+
+  <div *ngIf="favorities.length === 0">
+    No favorite books yet. Add some from the home page!
+  </div>
+
+  <div class="results">
+    <app-book-card
+      *ngFor="let book of favorities"
+      [book]="book"
+    ></app-book-card>
+  </div>
+</div>

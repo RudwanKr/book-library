@@ -1,10 +1,20 @@
 <div class="book-card">
   <img [src]="getCoverUrl()" alt="book.title">
-  <h3>{{book.title}}</h3>
-  <p *ngIf="book.author_name">By {{book.author_name[0]}}</p>
-  <p *ngIf="book.first_publish_year">📅 {{ book.first_publish_year }}</p>
+  <div class="card-content">
+    <h3>{{book.title}}</h3>
+    <p *ngIf="book.author_name">By {{book.author_name[0]}}</p>
+    <p *ngIf="book.first_publish_year">📅 {{ book.first_publish_year }}</p>
 
-  <a [routerLink]="['/book', book.key.split('/').pop()]">
-    View Details
-  </a>
+    <div class="buttons">
+      <a [routerLink]="['/book', book.key.split('/').pop()]">
+        View Details
+      </a>
+
+      <button (click)="toggleFavorite()"
+        [ngClass]="isFav? 'remove-btn' : 'add-btn'">
+        {{isFav? 'Remove Favorite' : 'Add Favorite'}}
+      </button>
+    </div>
+  </div>
+
 </div>

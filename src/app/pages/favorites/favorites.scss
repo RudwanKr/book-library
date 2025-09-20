@@ -1,0 +1,17 @@
+.favorites-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  .results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    height: max-content;
+    gap: 45px 15px;
+  }
+}

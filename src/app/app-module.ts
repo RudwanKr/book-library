@@ -7,18 +7,20 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { Home } from './pages/home/home';
 import { BookDetails } from './pages/book-details/book-details';
-import { Favorites } from './pages/favorites/favorites';
+import { FavoritesComponent } from './pages/favorites/favoritesComponent';
 import { BookCard } from './components/book-card/book-card';
 import { SearchBar } from './components/search-bar/search-bar';
+import { Navbar } from './components/navbar/navbar';
 
 @NgModule({
   declarations: [
     App,
     Home,
     BookDetails,
-    Favorites,
+    FavoritesComponent,
     BookCard,
-    SearchBar
+    SearchBar,
+    Navbar
   ],
   imports: [
     BrowserModule,

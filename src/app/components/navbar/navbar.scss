@@ -1,0 +1,21 @@
+.navbar {
+  display: flex;
+  position: fixed;
+  width: 100vw;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #222;
+  box-shadow: 0 3px 15px rgb(0,0,0,0.5);
+  z-index: 99;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar a.active {
+  color: #f39c12;
+  border-bottom: 2px solid #f39c12;
+}
